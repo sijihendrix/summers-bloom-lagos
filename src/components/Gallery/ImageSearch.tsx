@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ImageSearchProps } from "../types";
+import { ImageSearchProps } from "../../types";
 
 export const ImageSearch: React.FC<ImageSearchProps> = ({ searchText }) => {
   const [text, setText] = useState("");

@@ -1,5 +1,5 @@
 import React from "react";
-import { CardProps } from "../types";
+import { CardProps } from "../../types";
 
 export const Card: React.FC<CardProps> = ({ image }) => {
   const tags = image.tags.split(",");
@@ -8,22 +8,8 @@ export const Card: React.FC<CardProps> = ({ image }) => {
       <img src={image.webformatURL} alt="random" className="w-full" />
       <div className="px-6 py-4">
         <div className="font-bold text-purple-500 text-xl mb-2">
-          Photo by John Doe
+          Photo by Nims and Her Photographer Partner
         </div>
-        <ul>
-          <li>
-            <strong>Views:</strong>
-            {image.views}
-          </li>
-          <li>
-            <strong>Downloads:</strong>
-            {image.downloads}
-          </li>
-          <li>
-            <strong>Likes:</strong>
-            {image.likes}
-          </li>
-        </ul>
       </div>
       <div className="px-6 p7-4">
         {tags.map((tag: any, index: number) => (

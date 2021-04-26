@@ -1,5 +1,5 @@
 import React from "react";
-import { Gallery } from "./components/Gallery";
+import { Gallery, Home } from "./components";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -7,9 +7,8 @@ function App() {
     <>
       <Router>
         <Switch>
-          <Route path="/gallery">
-            <Gallery />
-          </Route>
+          <Route exact path="/" component={Home} />
+          <Route path="/gallery" component={Gallery} />
         </Switch>
       </Router>
     </>
