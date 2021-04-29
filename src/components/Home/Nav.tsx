@@ -1,18 +1,15 @@
 import React from "react";
+import { toggleMenu } from "../../helpers/toggleMenu";
+import { NavProps } from "../../types";
 
-export const Nav = () => {
-  function toggleMenu() {
-    const navToggle = document.getElementsByClassName("toggle");
-    for (let i = 0; i < navToggle.length; i++) {
-      navToggle?.item(i)?.classList.toggle("hidden");
-    }
-  }
+export const Nav = ({ gallery }: NavProps) => {
   return (
-    <nav className="flex flex-wrap items-center justify-between p-5 bg-blue-200">
+    <nav className="flex flex-wrap items-center justify-between p-5  text-white mx-auto dark:bg-gray-800 max-w-screen-lg opacity-100  ">
       <img
-        src="http://acmelogos.com/images/logo-1.svg"
-        alt="ACME"
-        width="120"
+        src="https://instagram.flos8-1.fna.fbcdn.net/v/t51.2885-19/s150x150/101924997_906624776523167_4053431623901773824_n.jpg?tp=1&_nc_ht=instagram.flos8-1.fna.fbcdn.net&_nc_ohc=BMD3W7-n6CEAX_oBGu7&edm=AEF8tYYAAAAA&ccb=7-4&oh=d6cc2f4719958ca91663b18d7290a48c&oe=60ACFAD4&_nc_sid=a9513d"
+        alt="Cake stuff"
+        width="60"
+        className="rounded-full shadow  max-w-full h-auto align-middle border-none cursor-pointer"
       />
       <div className="flex md:hidden">
         <button id="hamburger" onClick={toggleMenu}>
@@ -32,28 +29,32 @@ export const Nav = () => {
           />
         </button>
       </div>
-      <div className="toggle hidden md:flex w-full md:w-auto text-right text-bold mt-5 md:mt-0 border-t-2 border-blue-900 md:border-none">
+      <div
+        className={`toggle hidden md:flex w-full md:w-auto text-center text-2xl text-bold mt-5 md:mt-0 border-t-2 border-blue-900 md:border-none ${
+          gallery ? "text-black" : ""
+        }`}
+      >
         <a
+          className={`block md:inline-block py-2 px-4  hover:text-gray-800 hover:text-underline  font-bold no-underline`}
           href="/"
-          className="block md:inline-block text-blue-900 hover:text-blue-500 px-3 py-3 border-b-2 border-blue-900 md:border-none"
         >
           Home
         </a>
         <a
-          href="/about"
-          className="block md:inline-block text-blue-900 hover:text-blue-500 px-3 py-3 border-b-2 border-blue-900 md:border-none"
+          className="block md:inline-block no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
+          href="/"
         >
           About
         </a>
         <a
+          className="block md:inline-block  no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
           href="/gallery"
-          className="block md:inline-block text-blue-900 hover:text-blue-500 px-3 py-3 border-b-2 border-blue-900 md:border-none"
         >
           Gallery
         </a>
         <a
-          href="/contact"
-          className="block md:inline-block text-blue-900 hover:text-blue-500 px-3 py-3 border-b-2 border-blue-900 md:border-none"
+          className="inline-block  no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
+          href="/"
         >
           Contact
         </a>

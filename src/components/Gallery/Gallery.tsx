@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Card } from "./Card";
 import { ImageSearch } from "./ImageSearch";
 import { imageProps } from "../../types";
-import { Nav } from "../Home/Nav";
+import { Nav } from "../home/Nav";
+import axios from "axios";
 
 export const Gallery = () => {
   const [images, setImages] = useState([]);
@@ -10,21 +11,20 @@ export const Gallery = () => {
   const [term, setTerm] = useState("");
 
   useEffect(() => {
-    fetch(
-      `https://pixabay.com/api/?key=${process.env.REACT_APP_PIXABAY_API_KEY}&q=${term}&image_type=photo&pretty=true`
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        setImages(data.hits);
+    axios
+      .get(
+        `https://pixabay.com/api/?key=${process.env.REACT_APP_PIXABAY_API_KEY}&q=${term}&image_type=photo&pretty=true`
+      )
+      .then((response) => {
+        setImages(response.data.hits);
         setIsLoading(false);
-        console.log(data.hits);
       })
-      .catch((err) => console.log(err));
+      .catch((error) => console.log(error));
   }, [term]);
   return (
     <>
-      <Nav />
-      <div className="container mx-auto">
+      <Nav gallery />
+      <div className="container mx-auto p-5">
         <ImageSearch searchText={(text) => setTerm(text)} />
 
         {!isLoading && images.length === 0 && (
@@ -37,7 +37,7 @@ export const Gallery = () => {
             Loading Loading Loading
           </h1>
         ) : (
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-3 gap-6">
             {images.map((image: imageProps) => (
               <Card key={image.id} image={image} />
             ))}

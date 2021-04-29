@@ -1,7 +1,7 @@
 import React from "react";
 import { CardProps } from "../../types";
 
-export const Card: React.FC<CardProps> = ({ image }) => {
+export const Card = ({ image }: CardProps) => {
   const tags = image.tags.split(",");
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-lg">

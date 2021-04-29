@@ -9,3 +9,14 @@ export interface CardProps {
 export interface ImageSearchProps {
   searchText: (text: string) => void;
 }
+export interface ContainerProps {
+  component: () => JSX.Element;
+}
+
+export interface SocialIconsProps {
+  children: React.SVGProps<SVGSVGElement>;
+}
+
+export interface NavProps {
+  gallery?: true;
+}

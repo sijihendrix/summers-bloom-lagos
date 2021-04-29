@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { ImageSearchProps } from "../../types";
 
-export const ImageSearch: React.FC<ImageSearchProps> = ({ searchText }) => {
+export const ImageSearch = ({ searchText }: ImageSearchProps) => {
   const [text, setText] = useState("");
 
   const onSubmit = (e: any) => {
@@ -20,11 +20,14 @@ export const ImageSearch: React.FC<ImageSearchProps> = ({ searchText }) => {
             placeholder="Search Image Term..."
           />
           <button
-            className="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded"
+            className="flex-shrink-0 bg-purple-600 hover:bg-teal-700 border-teal-500 hover:bg-purple-700 text-sm  focus:ring-purple-600 text-white py-1 px-1.5 rounded  focus:ring-opacity-50 "
             type="submit"
           >
             Search
           </button>
+          {/* <button className="bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50 ...">
+            Sign up
+          </button> */}
         </div>
       </form>
     </div>
