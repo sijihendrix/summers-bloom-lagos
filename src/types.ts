@@ -4,6 +4,11 @@ export interface imageProps {
 
 export interface CardProps {
   image: { [key: string]: any };
+  carousel?: boolean;
+}
+
+export interface CarouselWheelProps {
+  images: { [key: string]: any };
 }
 
 export interface ImageSearchProps {
@@ -18,5 +23,10 @@ export interface SocialIconsProps {
 }
 
 export interface NavProps {
-  gallery?: true;
+  gallery?: boolean;
+}
+
+export interface GalleryProps extends ImageSearchProps {
+  images: { [key: string]: any };
+  isLoading: boolean;
 }

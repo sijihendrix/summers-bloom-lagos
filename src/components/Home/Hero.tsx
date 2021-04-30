@@ -4,11 +4,11 @@ import { ReactComponent as Twitter } from "../../assests/twitter.svg";
 import { ReactComponent as Whatsapp } from "../../assests/whatsapp.svg";
 import { ReactComponent as Instagram } from "../../assests/instagram.svg";
 // import { SocialIconsProps } from "../../types";
+//TODO: Refractor Icons to pass em down as props
 
 export const Hero = () => {
   console.log(Instagram);
   // const icons = [Twitter, Instagram, Whatsapp];
-
   return (
     <>
       <div className="container mx-auto flex flex-col md:flex-row items-center my-12 md:my-24 max-w-screen-lg  text-white">
@@ -26,7 +26,7 @@ export const Hero = () => {
             {/* {icons.map((icon: any, index: number) => {
               console.log(icon);
 
-              return <Icon key={index} children={icon} />;
+              return <Icon key={index}>{icon}</Icon>;
             })} */}
           </div>
         </div>
