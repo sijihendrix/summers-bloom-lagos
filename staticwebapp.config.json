@@ -1,0 +1,6 @@
+{
+  "routes": [
+    { "route": "/gallery", "allowedRoles": ["authenticated"] },
+    { "route": "/about", "allowedRoles": ["authenticated"] }
+  ]
+}
