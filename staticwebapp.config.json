@@ -1,3 +1,6 @@
 {
-  "routes": [{ "route": "/gallery" }, { "route": "/about" }]
+  "routes": [
+    { "route": "/gallery", "allowedRoles": ["anonymous"] },
+    { "route": "/about", "allowedRoles": ["anonymous"] }
+  ]
 }
