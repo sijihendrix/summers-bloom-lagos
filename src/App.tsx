@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Gallery, Home, OurStory } from "./pages";
-import { Container } from "./components";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { darkMode } from "./helpers/darkMode";
 import { getImages } from "./helpers/getImages";
-import { CarouselWheel } from "./components/gallery/CarouselWheel";
 
 function App() {
   const [images, setImages] = useState([]);
@@ -24,17 +22,10 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/">
-            <Container component={Home}>
-              <Home />
-            </Container>
-            <CarouselWheel images={images} />
+            <Home images={images} />
           </Route>
           <Route path="/about">
             <OurStory images={images} />
-          </Route>
-
-          <Route path="/test">
-            <CarouselWheel images={images} />
           </Route>
           <Route path="/gallery">
             <Gallery
