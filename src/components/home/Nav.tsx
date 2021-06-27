@@ -45,7 +45,7 @@ export const Nav = ({ gallery }: NavProps) => {
         </a>
         <a
           className="block md:inline-block no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
-          href="/about "
+          href="/#about "
         >
           About
         </a>

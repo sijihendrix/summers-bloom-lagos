@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Gallery, Home, OurStory } from "./pages";
+import { Gallery, Home } from "./pages";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { darkMode } from "./helpers/darkMode";
 import { getImages } from "./helpers/getImages";
@@ -24,9 +24,7 @@ function App() {
           <Route exact path="/">
             <Home images={images} />
           </Route>
-          <Route path="/about">
-            <OurStory images={images} />
-          </Route>
+
           <Route path="/gallery">
             <Gallery
               images={images}
