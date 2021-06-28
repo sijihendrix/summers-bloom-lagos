@@ -21,7 +21,7 @@ export const Gallery = ({ images, isLoading, searchText }: GalleryProps) => {
             Loading Loading Loading
           </h1>
         ) : (
-          <div className="grid grid-cols-2 gap-4  mx-auto max-w-4xl">
+          <div className="grid grid-cols-2 gap-44  mx-auto max-w-4xl">
             {images.map((image: imageProps) => (
               <Card key={image.id} image={image} />
             ))}
