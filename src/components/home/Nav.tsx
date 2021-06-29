@@ -2,17 +2,19 @@ import React from "react";
 import { toggleMenu } from "../../helpers/toggleMenu";
 import { NavProps } from "../../types";
 import { Link } from "react-router-dom";
+import { ReactComponent as Logo } from "../../assests/instagram.svg";
 
 export const Nav = ({ gallery }: NavProps) => {
   return (
     <nav className="flex flex-wrap items-center justify-between p-5  text-white mx-auto dark:bg-gray-800 max-w-screen-lg opacity-100  ">
       <Link to="/">
-        <img
-          src="https://instagram.flos8-1.fna.fbcdn.net/v/t51.2885-19/s150x150/101924997_906624776523167_4053431623901773824_n.jpg?tp=1&_nc_ht=instagram.flos8-1.fna.fbcdn.net&_nc_ohc=BMD3W7-n6CEAX_oBGu7&edm=AEF8tYYAAAAA&ccb=7-4&oh=d6cc2f4719958ca91663b18d7290a48c&oe=60ACFAD4&_nc_sid=a9513d"
+        {/* <img
+          src={Logo}
           alt="Cake stuff"
           width="60"
           className="rounded-full shadow  max-w-full h-auto align-middle border-none cursor-pointer"
-        />
+        /> */}
+        <Logo />
       </Link>
       <div className="flex md:hidden">
         <button id="hamburger" onClick={toggleMenu}>
